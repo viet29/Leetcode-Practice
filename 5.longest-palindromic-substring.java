@@ -16,11 +16,10 @@ class Solution {
         for (int i = 1; i < arr.length - 1; i++) {
             int j = i;
             while (j >= 0) {
-                
+
             }
         }
 
     }
 }
 // @lc code=end
-
