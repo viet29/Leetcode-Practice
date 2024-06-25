@@ -16,7 +16,7 @@ class Solution {
         for (int i = 0; i < position.length && ballPlaced < m; i++) {
             int currPos = position[i];
             if (currPos - prevBallPos >= x) {
-                ballPlaced += 1;
+                ballPlaced++;
                 prevBallPos = currPos;
             }
         }
