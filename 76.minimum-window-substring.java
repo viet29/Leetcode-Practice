@@ -13,6 +13,7 @@ class Solution {
         int[] map = new int[128];
         int count = t.length();
         int start = 0, end = 0, minLen = Integer.MAX_VALUE, minStart = 0;
+
         for (char c : t.toCharArray()) {
             map[c]++;
         }

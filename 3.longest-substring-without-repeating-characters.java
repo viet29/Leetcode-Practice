@@ -7,20 +7,18 @@
 // @lc code=start
 class Solution {
     public int lengthOfLongestSubstring(String s) {
+        if (s.length() <= 1)
+            return s.length();
         int start = 0, end = 0, maxLen = 0;
         int[] map = new int[128];
-        for (char c : s.toCharArray()) {
-            map[c]++;
-        }
+        char[] c = s.toCharArray();
         while (end < s.length()) {
-            if (map[s.charAt(end)] > 0) {
-                maxLen = Math.max(maxLen, end - start);
+            map[c[end]]++;
+            while (map[c[end]] > 1) {
+                map[c[start++]]--;
             }
-            map[s.charAt(end)]--;
+            maxLen = Math.max(maxLen, end - start + 1);
             end++;
-            while (map[s.charAt(end - 1)] < 0) {
-                map[s.charAt(start++)]++;
-            }
         }
         return maxLen;
     }
