@@ -7,9 +7,10 @@
 // @lc code=start
 class Solution {
     public int lengthOfLongestSubstring(String s) {
-        if (s.length() <= 1)
+        if (s.length() <= 1) {
             return s.length();
-        int start = 0, end = 0, maxLen = 0;
+        }
+        int start = 0, end = 0, maxlen = 0;
         int[] map = new int[128];
         char[] c = s.toCharArray();
         while (end < s.length()) {
@@ -17,10 +18,10 @@ class Solution {
             while (map[c[end]] > 1) {
                 map[c[start++]]--;
             }
-            maxLen = Math.max(maxLen, end - start + 1);
+            maxlen = Math.max(maxlen, end - start + 1);
             end++;
         }
-        return maxLen;
+        return maxlen;
     }
 }
 // @lc code=end
